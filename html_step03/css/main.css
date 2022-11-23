@@ -1,0 +1,172 @@
+.bg {
+    position: relative;
+    height: 600px;
+    /* background-color: tomato;
+    background-image: url(../img/n01.jpg);
+    /* no-repeat:반복되지않게 repeat-x:x축으로 반복 */
+    /* background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; */
+    background: tomato url(../img/n01.jpg) no-repeat fixed center center/cover;
+    /* background-attachment: fixed; */
+    margin: 0 0 1000px 0;
+}
+
+.bg::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to left, transparent 30%, #444 70%);
+}
+
+figure {
+    width: 300px;
+    margin: 0 auto;
+}
+
+figure img {
+    /* 화면에 맞춰서 줄어들고 늘어남 */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.video {
+    position: relative;
+}
+
+.video P {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    font-size: 200px;
+    font-weight: 900;
+    color: #fff;
+}
+
+.video video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.sun {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ff0;
+    animation: sunMove 2s linear infinite;
+    font-size: 0;
+}
+
+.sun::before {
+    /* content 안들어가면 안나옴 랜더링 안됨 */
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    left: -60px;
+    width: 50px;
+    height: 4px;
+    border-radius: 2px;
+    background: #ff0;
+}
+
+.sun::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    right: -60px;
+    width: 50px;
+    height: 4px;
+    border-radius: 2px;
+    background: #ff0;
+}
+
+.sun span::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 50px;
+    border-radius: 2px;
+    background: #ff0;
+}
+
+.sun span::after {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 50px;
+    border-radius: 2px;
+    background: #ff0;
+}
+
+@keyframes sunMove {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sun2 {
+    position: absolute;
+    top: 200px;
+    right: 200px;
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    font-size: 0;
+    animation: sunMove 2s linear infinite;
+}
+
+.sun2::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    left: -60px;
+    width: 50px;
+    height: 4px;
+    border-radius: 2px;
+    background: red;
+}
+
+.sun2::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 2px);
+    right: -60px;
+    width: 50px;
+    height: 4px;
+    border-radius: 2px;
+    background: red;
+}
+
+.sun2 span::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 50px;
+    border-radius: 2px;
+    background: red;
+}
+
+.sun2 span::after {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 50px;
+    border-radius: 2px;
+    background: red;
+}
